@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tidal.wav — Sign In / Sign Up</title>
+
+  <!-- Poppins (matches styles.css font stack) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Your provided stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <meta name="color-scheme" content="dark">
+</head>
+<body>
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <main class="card single" id="auth-card" role="main" aria-labelledby="brand">
+    <section class="panel" id="panel">
+      <!-- Brand / Label required by user -->
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px;">
+        <div>
+          <h2 id="brand">Tidal.wav</h2>
+          <div class="muted small">Welcome — sign in or create an account</div>
+        </div>
+
+        <div style="display:flex; gap:8px; align-items:center;">
+          <button class="link-btn" id="show-signin" aria-pressed="true">Sign in</button>
+          <button class="link-btn" id="show-signup" aria-pressed="false">Sign up</button>
+        </div>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="signin-form" novalidate>
+        <div class="field">
+          <label for="signin-email">Email</label>
+          <input id="signin-email" type="email" inputmode="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="signin-password">Password</label>
+          <div class="password-row">
+            <input id="signin-password" type="password" autocomplete="current-password" required />
+            <button type="button" class="btn-icon" data-target="signin-password" title="Show / hide password" aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:18px;">
+          <button type="submit" class="btn primary" id="signin-btn">Sign in</button>
+          <button type="button" class="btn ghost" id="signin-cancel">Cancel</button>
+        </div>
+
+        <div class="message" id="signin-message" role="status" aria-live="polite"></div>
+      </form>
+
+      <!-- Sign Up Form (hidden by default) -->
+      <form id="signup-form" novalidate style="display:none">
+        <div class="field">
+          <label for="signup-name">Full name</label>
+          <input id="signup-name" type="text" autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="signup-email">Email</label>
+          <input id="signup-email" type="email" inputmode="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="signup-password">Password</label>
+          <div class="password-row">
+            <input id="signup-password" type="password" autocomplete="new-password" required />
+            <button type="button" class="btn-icon" data-target="signup-password" title="Show / hide password" aria-label="Toggle password visibility">👁️</button>
+          </div>
+          <div class="small muted">Password must be at least 6 characters</div>
+        </div>
+
+        <div class="field">
+          <label for="signup-password-confirm">Confirm password</label>
+          <input id="signup-password-confirm" type="password" autocomplete="new-password" required />
+        </div>
+
+        <div class="actions" style="margin-top:12px;">
+          <button type="submit" class="btn primary" id="signup-btn">Create account</button>
+          <button type="button" class="btn ghost" id="signup-cancel">Cancel</button>
+        </div>
+
+        <div class="message" id="signup-message" role="status" aria-live="polite"></div>
+      </form>
+
+      <!-- Authenticated / welcome view (hidden initially) -->
+      <div id="welcome-view" style="display:none; padding-top:6px;">
+        <h2 id="welcome-title">You're signed in</h2>
+        <div class="muted small" id="welcome-sub">Welcome back</div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; align-items:center;">
+          <button class="btn primary" id="signout-btn">Sign out</button>
+          <button class="btn ghost" id="account-delete">Delete account</button>
+        </div>
+
+        <div class="message" id="welcome-message" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
