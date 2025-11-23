@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>tidal.wav — Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <!-- load from root -->
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .wrap { width: 95vw; max-width: 1100px; margin: 20px auto; }
+    .grid { display:grid; grid-template-columns: 1fr 360px; gap:16px; }
+    .list { max-height: 70vh; overflow:auto; }
+    .item { padding:10px; border-radius:10px; background: rgba(255,255,255,0.02); margin-bottom:8px; }
+  </style>
+</head>
+<body>
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <main class="wrap">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <div>
+        <h2>tidal.wav — Admin</h2>
+        <div class="muted small">Review and approve submissions</div>
+      </div>
+      <div>
+        <a class="btn ghost link" href="/admin/logout">Sign out</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card list" id="submissions-list" style="padding:12px;">
+        <!-- submissions injected here -->
+      </div>
+
+      <div class="card" style="padding:16px;" id="detail-panel">
+        <div id="detail-empty">
+          <h3>Select a submission</h3>
+          <div class="muted small">Click an item on the left to see details, preview files, download zip, approve or reject.</div>
+        </div>
+
+        <div id="detail-content" style="display:none;">
+          <h3 id="detail-title"></h3>
+          <div class="muted small" id="detail-meta"></div>
+          <div id="detail-files" style="margin-top:12px"></div>
+
+          <div style="margin-top:12px; display:flex; gap:8px;">
+            <button id="approve-btn" class="btn primary">Approve</button>
+            <button id="reject-btn" class="btn ghost">Reject</button>
+            <a id="download-link" class="btn ghost" href="#">Download ZIP</a>
+          </div>
+
+          <div style="margin-top:12px;">
+            <label>Admin note (optional):</label>
+            <textarea id="admin-note" style="width:100%; height:80px; margin-top:6px; border-radius:8px; padding:8px"></textarea>
+          </div>
+
+          <div id="detail-message" class="message" style="margin-top:8px;"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+   <script src="/admin-dashboard.js" defer></script>
+</body>
+</html>

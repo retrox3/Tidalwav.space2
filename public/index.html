@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tidal.wav — Album Submission</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <main class="card single" role="main">
+    <section class="panel">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px;">
+        <div>
+          <h2>Tidal.wav</h2>
+          <div class="muted small">Submit an album for review</div>
+        </div>
+      </div>
+
+      <form id="album-form">
+        <div class="field">
+          <label for="albumName">Album Name:</label>
+          <input id="albumName" name="albumName" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="cover">Album Cover (minimum 3000x3000):</label>
+          <input id="cover" name="cover" type="file" accept="image/*" required>
+          <div id="cover-info" class="small muted"></div>
+        </div>
+
+        <div class="field">
+          <label for="releaseDate">Release Date:</label>
+          <input id="releaseDate" name="releaseDate" type="date">
+        </div>
+
+        <div class="field">
+          <label>Platforms:</label>
+          <div class="muted small">Select platforms (check all that apply):</div>
+
+          <!-- Replaced the multi-select with checkbox list -->
+          <div id="platforms-list" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:8px; margin-top:8px; padding:8px; border-radius:8px; border:1px solid rgba(255,255,255,0.03); max-height:240px; overflow:auto;">
+            <label><input type="checkbox" name="platforms" value="Spotify"> Spotify</label>
+            <label><input type="checkbox" name="platforms" value="Apple Music"> Apple Music</label>
+            <label><input type="checkbox" name="platforms" value="iTunes"> iTunes</label>
+            <label><input type="checkbox" name="platforms" value="Instagram & Facebook"> Instagram & Facebook</label>
+            <label><input type="checkbox" name="platforms" value="TikTok & other ByteDance stores"> TikTok & other ByteDance stores</label>
+            <label><input type="checkbox" name="platforms" value="YouTube Music"> YouTube Music</label>
+            <label><input type="checkbox" name="platforms" value="Amazon"> Amazon</label>
+            <label><input type="checkbox" name="platforms" value="Pandora"> Pandora</label>
+            <label><input type="checkbox" name="platforms" value="Deezer"> Deezer</label>
+            <label><input type="checkbox" name="platforms" value="Tidal"> Tidal</label>
+            <label><input type="checkbox" name="platforms" value="iHeartRadio"> iHeartRadio</label>
+            <label><input type="checkbox" name="platforms" value="Claro Música"> Claro Música</label>
+            <label><input type="checkbox" name="platforms" value="Saavn"> Saavn</label>
+            <label><input type="checkbox" name="platforms" value="Boomplay"> Boomplay</label>
+            <label><input type="checkbox" name="platforms" value="Anghami"> Anghami</label>
+            <label><input type="checkbox" name="platforms" value="NetEase"> NetEase</label>
+            <label><input type="checkbox" name="platforms" value="Tencent"> Tencent</label>
+            <label><input type="checkbox" name="platforms" value="Qobuz (beta)"> Qobuz (beta)</label>
+            <label><input type="checkbox" name="platforms" value="Joox"> Joox</label>
+            <label><input type="checkbox" name="platforms" value="Kuack Media"> Kuack Media</label>
+            <label><input type="checkbox" name="platforms" value="Adaptr"> Adaptr</label>
+            <label><input type="checkbox" name="platforms" value="Flo"> Flo</label>
+            <label><input type="checkbox" name="platforms" value="MediaNet"> MediaNet</label>
+            <label><input type="checkbox" name="platforms" value="Snapchat"> Snapchat</label>
+            <label><input type="checkbox" name="platforms" value="Roblox (beta)"> Roblox (beta)</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="numSongs">Number of Songs:</label>
+          <input id="numSongs" name="numSongs" type="number" min="1" value="1">
+        </div>
+
+        <div id="tracks-container">
+          <!-- Tracks will be injected here -->
+        </div>
+
+        <div style="display:flex; gap:12px; margin-top:12px;">
+          <button type="button" class="btn ghost" id="add-track">Add Track</button>
+          <button type="button" class="btn ghost" id="remove-track">Remove Track</button>
+        </div>
+
+        <div style="margin-top:16px;">
+          <button type="submit" class="btn primary" id="submit-btn">Submit Album</button>
+          <div id="form-message" class="message" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

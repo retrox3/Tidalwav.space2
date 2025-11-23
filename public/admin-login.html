@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>tidal.wav — Admin Login</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* small overrides to center the card on the admin login page */
+    .center { display:grid; place-items:center; min-height:100vh; padding:24px; }
+    form.card { width:360px; }
+    .note { margin-top:10px; font-size:13px; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <main class="center">
+    <form id="admin-login-form" method="POST" action="/admin/login" class="card single" novalidate>
+      <section class="panel">
+        <h2>Admin — tidal.wav</h2>
+        <div class="muted small">Sign in to review submissions</div>
+
+        <div class="field" style="margin-top:16px;">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+        </div>
+
+        <div style="display:flex; gap:8px; align-items:center; margin-top:12px;">
+          <button class="btn primary" type="submit">Sign in</button>
+          <a class="btn ghost link" href="/">Back</a>
+        </div>
+
+        <div id="login-message" class="message" role="status" aria-live="polite" style="margin-top:12px"></div>
+
+        <div class="note">
+          Tip: for this demo the admin password is set by the ADMIN_PASS environment variable (default "adminpass").
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <script src="/admin-login.js" defer></script>
+</body>
+</html>
