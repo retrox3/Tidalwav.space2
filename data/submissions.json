@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1cac174e-19cf-4d45-b95f-225ae5b6822f",
+    "albumName": "niyyrwtre",
+    "releaseDate": "2025-11-07",
+    "platforms": [
+      "Spotify",
+      "Pandora"
+    ],
+    "numSongs": 1,
+    "cover": "1cac174e-19cf-4d45-b95f-225ae5b6822f\\Automotivo Turbo Gal..._imresizer.jpg",
+    "tracks": [
+      {
+        "index": 1,
+        "title": "teast",
+        "featured": "nigg",
+        "explicit": false,
+        "fileName": "bnf.mp3",
+        "file": "1cac174e-19cf-4d45-b95f-225ae5b6822f\\bnf.mp3",
+        "originalFileName": "bnf.mp3"
+      }
+    ],
+    "createdAt": "2025-11-17T03:43:01.928Z",
+    "status": "approved",
+    "adminNote": null
+  }
+]
